@@ -7,10 +7,10 @@ describe('splits a string and emits an event for each letter', done => {
         done();
     });
 
-    it('fires the item event for each item in an array', () => {
+    it('fires the letter event for each letter in an string', () => {
         const str = 'I am USB type C.';
         
-        letterEmitter.on('item', letter => {
+        letterEmitter.on('letter', letter => {
             expect(str).toContainEqual(letter);
         });
 
