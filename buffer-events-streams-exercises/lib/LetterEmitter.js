@@ -10,7 +10,12 @@ class LetterEmitter extends EventEmitter {
     //when done emit end event
     //event should probably be called letter
     read(str) {
-        return str;
+        const letterArr = str.split('');
+        letterArr.forEach(letter => {
+            this.emit('letter', letter);
+        });
+
+        this.emit('end');
     }
 }
 
