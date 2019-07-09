@@ -1,4 +1,4 @@
-const { LetterEmitter } = require('../lib/LetterEmitter');
+const LetterEmitter = require('../lib/LetterEmitter');
 
 describe('splits a string and emits an event for each letter', done => {
     let letterEmitter;
@@ -18,6 +18,6 @@ describe('splits a string and emits an event for each letter', done => {
             done();
         });
 
-        letterEmitter.iterate(str);
+        letterEmitter.read(str);
     });
 });
