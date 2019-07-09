@@ -1,8 +1,9 @@
 const { LetterEmitter } = require('../lib/LetterEmitter');
 
 describe('splits a string and emits an event for each letter', done => {
+    let letterEmitter;
     beforeEach(done => {
-        const letterEmitter = new LetterEmitter();
+        letterEmitter = new LetterEmitter();
         done();
     });
 
