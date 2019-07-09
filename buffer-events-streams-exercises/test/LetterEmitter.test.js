@@ -18,6 +18,6 @@ describe('splits a string and emits an event for each letter', done => {
             done();
         });
 
-        letterEmitter.iterate(names);
+        letterEmitter.iterate(str);
     });
 });
