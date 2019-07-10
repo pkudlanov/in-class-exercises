@@ -1,13 +1,12 @@
 const LetterEmitter = require('../lib/LetterEmitter');
 
-describe('splits a string and emits an event for each letter', done => {
+describe('splits a string and emits an event for each letter', () => {
     let letterEmitter;
-    beforeEach(done => {
+    beforeEach(() => {
         letterEmitter = new LetterEmitter();
-        done();
     });
 
-    it('fires the letter event for each letter in an string', () => {
+    it('fires the letter event for each letter in an string', (done) => {
         const str = 'I am USB type C.';
         
         letterEmitter.on('letter', letter => {
