@@ -8,12 +8,15 @@ describe('splits a string and emits an event for each letter', () => {
 
     it('fires the letter event for each letter in an string', (done) => {
         const str = 'I am USB type C.';
-        
-        letterEmitter.on('letter', letter => {
-            expect(str).toContainEqual(letter);
-        });
+        const callback = jest.fn();
+    
+        letterEmitter.on('letter', callback);
 
-        letterEmitter.end('end', () => {
+        letterEmitter.once('end', () => {
+            str.split('').forEach((letter, offset) => {
+                expect(callback).toHaveBeenCalledWith({ letter, offset });
+            });
+
             done();
         });
 
