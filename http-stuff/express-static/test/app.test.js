@@ -12,7 +12,7 @@ describe('app routes', () => {
 
     it('has a list of locations route', () => {
         return request(app)
-            .get('/api/v1/dogs')
+            .get('/api/v1/locations')
             .then(res => {
                 expect(res.body).toEqual([
                     { name: 'Leaning Tower of Pisa', location: 'Europe', significance: 'Galileo' },
